@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AccountDetail {
+public class AccountDetailDto {
 
 	private String accountId;
 	private String iban;
