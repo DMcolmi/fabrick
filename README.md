@@ -1,24 +1,20 @@
-# fabrick
-exercise for Fabrick by Davide Maria Colmi
-
-
 Controller REST:
-1) BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
-   
--	"/api/bancking-account/"
-	Query Params: accountId
-	esempio chiamata:
-	http://localhost:8080/api/bancking-account/?accountId=14537780
+-BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
 
--	"/api/bancking-account/account-balance"
-	Query Params: accountId
-	esempio chiamata:
-	http://localhost:8080/api/bancking-account/account-balance?accountId=14537780
+1)	"/api/bancking-account/"
+	-	Query Params: accountId
+	-	Restituisce: dettagli account
+	-	esempio chiamata: http://localhost:8080/api/bancking-account/?accountId=14537780
 
--	"/api/bancking-account/account-transactions"
-	Query Params: accountId, fromDate, toDate
-	esempio chiamata:
-	http://localhost:8080/api/bancking-account/account-transactions?accountId=14537780&fromDate=2019-01-01&toDate=2019-12-01
+2)	"/api/bancking-account/account-balance"
+	-	Query Params: accountId
+	-	Restituisce dettagli account balance
+	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-balance?accountId=14537780
+
+3)	"/api/bancking-account/account-transactions"
+	-	Query Params: accountId, fromDate, toDate
+	-	Restituisce dettagli account transactions
+	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-transactions?accountId=14537780&fromDate=2019-01-01&toDate=2019-12-01
 
 Gestione eccezioni:
 1) FabrickRestException: eccezione specifica per errori durante la comunicazione con le API di Fablick
