@@ -20,7 +20,10 @@
 #### Testing:
 1) i test unitari sono realizzati con tramite mockito
 2) un esempio di test unitari è stato realizzato per dei metodi del @Service BanckingAccountService
+
    
+#### Versionamento:
+GIT e pubblicato su GitHub   
 
 #### Controller REST:
 - BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
