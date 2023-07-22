@@ -20,7 +20,7 @@
 #### Controller REST:
 - BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
 
-1)	"/api/bancking-account/"
+1)	GET "/api/bancking-account/"
 	-	Query Params: accountId
 	-	Restituisce: dettagli account:
 		{
@@ -40,7 +40,7 @@
 		}
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/?accountId=14537780
 
-2)	"/api/bancking-account/account-balance"
+2)	GET "/api/bancking-account/account-balance"
 	-	Query Params: accountId
 	-	Restituisce: Lettura saldo account:
 		{
@@ -51,7 +51,7 @@
 		}
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-balance?accountId=14537780
 
-3)	"/api/bancking-account/account-transactions"
+3)	GET "/api/bancking-account/account-transactions"
 	-	Query Params: accountId, fromDate, toDate
 	-	Restituisce: Lista di transazioni account:
 		{
@@ -72,6 +72,52 @@
 		    ]
 		}
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-transactions?accountId=14537780&fromDate=2019-01-01&toDate=2019-12-01
+
+4)	POST "/api/bancking-account/account-transactions"
+	-	Query Params: accountId
+ 	-	Body. esempio: {
+		  "creditor": {
+		    "name": "John Doe",
+		    "account": {
+		      "accountCode": "IT23A0336844430152923804660",
+		      "bicCode": "SELBIT2BXXX"
+		    },
+		    "address": {
+		      "address": null,
+		      "city": null,
+		      "countryCode": null
+		    }
+		  },
+		  "executionDate": "2019-04-01",
+		  "uri": "REMITTANCE_INFORMATION",
+		  "description": "Payment invoice 75/2017",
+		  "amount": 800,
+		  "currency": "EUR",
+		  "isUrgent": false,
+		  "isInstant": false,
+		  "feeType": "SHA",
+		  "feeAccountId": "45685475",
+		  "taxRelief": {
+		    "taxReliefId": "L449",
+		    "isCondoUpgrade": false,
+		    "creditorFiscalCode": "56258745832",
+		    "beneficiaryType": "NATURAL_PERSON",
+		    "naturalPersonBeneficiary": {
+		      "fiscalCode1": "MRLFNC81L04A859L",
+		      "fiscalCode2": null,
+		      "fiscalCode3": null,
+		      "fiscalCode4": null,
+		      "fiscalCode5": null
+		    },
+		    "legalPersonBeneficiary": {
+		      "fiscalCode": null,
+		      "legalRepresentativeFiscalCode": null
+		    }
+		  }
+		}
+	-	Restituisce: esito bonifico: l'API di Fabrick restituisce sempre '400 bad request'  "status": "KO", "error code": "API000".
+		l'errore viene gestito e wrappato in un codice errore 441, con messaggio: "Error FabrickApiService.createMoneyTransfer 400 Bad Request from POST https://sandbox.platfr.io/api/gbs/banking/v4.0/accounts/14537780/payments/money-transfers"
+	-	esempio chiamata: http://localhost:8080/api/bancking-account/money-transfer?accountId=14537780
 	
 
 
