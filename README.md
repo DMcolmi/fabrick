@@ -1,5 +1,6 @@
 # Fabrick
-## assignment notes by Davide Maria Colmi
+### Assignment notes by Davide Maria Colmi
+
 
 Gestione eccezioni:
 1) FabrickRestException: eccezione specifica per errori durante la comunicazione con le API di Fablick
