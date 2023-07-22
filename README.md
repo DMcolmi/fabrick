@@ -15,6 +15,10 @@ Controller REST:
 	-	Query Params: accountId, fromDate, toDate
 	-	Restituisce dettagli account transactions
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-transactions?accountId=14537780&fromDate=2019-01-01&toDate=2019-12-01
+	
+comunicazione con API esposte da Fabrick:
+1) configurazione WebClient gestita dalla classe FabrickWebClientConfig
+2) API consumate nella classe FabrickApiService
 
 Gestione eccezioni:
 1) FabrickRestException: eccezione specifica per errori durante la comunicazione con le API di Fablick
