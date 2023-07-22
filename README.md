@@ -15,6 +15,11 @@
 #### Comunicazione con API esposte da Fabrick:
 1) configurazione WebClient gestita dalla classe FabrickWebClientConfig
 2) API consumate nella classe FabrickApiService
+
+
+#### Testing:
+1) i test unitari sono realizzati con tramite mockito
+2) un esempio di test unitari è stato realizzato per dei metodi del @Service BanckingAccountService
    
 
 #### Controller REST:
