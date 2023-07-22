@@ -1,5 +1,5 @@
 # fabrick
-exercise for Fabric by Davide Maria Colmi
+exercise for Fabrick by Davide Maria Colmi
 
 
 Controller REST:
