@@ -14,6 +14,7 @@ public class FabrickWebClientConfig {
         return WebClient.builder().baseUrl("https://sandbox.platfr.io")
 				.defaultHeader("Auth-Schema", "S2S")
                 .defaultHeader("Api-Key", "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP")
+                .defaultHeader("X-Time-Zone", "")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
                 .build();
