@@ -34,7 +34,24 @@ Controller REST:
 
 3)	"/api/bancking-account/account-transactions"
 	-	Query Params: accountId, fromDate, toDate
-	-	Restituisce: Lista di transazioni account
+	-	Restituisce: Lista di transazioni account:
+		{
+		    "list": [
+		        {
+		            "transactionId": "519157",
+		            "operationId": "00000000519157",
+		            "accountingDate": "2019-12-31T00:00:00.000+00:00",
+		            "valueDate": "2020-01-01",
+		            "type": {
+		                "enumeration": "GBS_TRANSACTION_TYPE",
+		                "value": "GBS_ACCOUNT_TRANSACTION_TYPE_0050"
+		            },
+		            "amount": -586,
+		            "currency": "EUR",
+		            "description": "PD VISA CORPORATE 11"
+		        }
+		    ]
+		}
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-transactions?accountId=14537780&fromDate=2019-01-01&toDate=2019-12-01
 	
 
