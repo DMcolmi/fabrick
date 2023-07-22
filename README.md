@@ -2,22 +2,22 @@
 ### Assignment notes by Davide Maria Colmi
 
 
-Gestione eccezioni:
+#### Gestione eccezioni:
 1) FabrickRestException: eccezione specifica per errori durante la comunicazione con le API di Fablick
 2) RestExceptionHandler: in caso di errore durante la comunicazione con Fablick applica uno specifico HttpStatusCode e message
    
 
-Logging:
+#### Logging:
 1) viene utilizzato logback. file di configurazione in resources. log su FILE e CONSOLE, settato su livello INFO, modificabile a seconda della necessità in DEBUG
 2) all'interno delle classi, tramite LoggerFactory è creata un istanza del logger. sono loggate le operazioni principali dell'applicativo con livello DEBUG, gli errori con livello ERROR
    
 
-Comunicazione con API esposte da Fabrick:
+#### Comunicazione con API esposte da Fabrick:
 1) configurazione WebClient gestita dalla classe FabrickWebClientConfig
 2) API consumate nella classe FabrickApiService
    
 
-Controller REST:
+#### Controller REST:
 - BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
 
 1)	"/api/bancking-account/"
