@@ -3,7 +3,7 @@ Controller REST:
 
 1)	"/api/bancking-account/"
 	-	Query Params: accountId
-	-	Restituisce: dettagli account
+	-	Restituisce: dettagli account:
 		{
 		    "accountId": "14537780",
 		    "iban": "IT40L0326822311052923800661",
@@ -23,7 +23,7 @@ Controller REST:
 
 2)	"/api/bancking-account/account-balance"
 	-	Query Params: accountId
-	-	Restituisce: Lettura saldo account
+	-	Restituisce: Lettura saldo account:
 		{
 		    "date": "2023-07-22T00:00:00.000+00:00",
 		    "balance": 999995.12,
