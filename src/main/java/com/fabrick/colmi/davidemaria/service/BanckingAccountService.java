@@ -13,6 +13,9 @@ import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferDto;
 import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferResponseDto;
 import com.fabrick.colmi.davidemaria.dto.transaction.AccountTransactionDto;
 
+/**
+ *	Implementation of the interface that defines the methods used by the REST controller to manage operations on the account
+ */
 @Service
 public class BanckingAccountService implements BanckingAccount {
 

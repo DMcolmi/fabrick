@@ -6,6 +6,9 @@ import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferDto;
 import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferResponseDto;
 import com.fabrick.colmi.davidemaria.dto.transaction.AccountTransactionDto;
 
+/**
+ *	interface that defines the methods used by the REST controller to manage operations on the account
+ */
 public interface BanckingAccount {
 
 	AccountDetailDto getAccount(String accountId);

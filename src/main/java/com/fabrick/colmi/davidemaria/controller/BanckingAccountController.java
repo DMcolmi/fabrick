@@ -17,36 +17,40 @@ import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferResponseDto;
 import com.fabrick.colmi.davidemaria.dto.transaction.AccountTransactionDto;
 import com.fabrick.colmi.davidemaria.service.BanckingAccountService;
 
+/**
+ * REST controller that exposes a set of APIs for managing account operations
+ */
 @RestController
 @RequestMapping("/api/bancking-account")
 public class BanckingAccountController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(BanckingAccountController.class);
-	
-	@Autowired	
+
+	@Autowired
 	BanckingAccountService banckingAccountService;
-	
-    @GetMapping("/")
-    public AccountDetailDto getAccount(@RequestParam(name = "accountId") String accountId) {
-    	logger.debug("getAccount: {}", accountId);
-    	return banckingAccountService.getAccount(accountId);
-    }
-    
-    @GetMapping("/account-balance")
-    public AccountBalanceDto getAccountBalance(@RequestParam(name = "accountId") String accountId) {
-    	logger.debug("getAccountBalance: {}", accountId);
-    	return banckingAccountService.getAccountBalance(accountId);
-    }
-    
+
+	@GetMapping("/")
+	public AccountDetailDto getAccount(@RequestParam(name = "accountId") String accountId) {
+		logger.debug("getAccount: {}", accountId);
+		return banckingAccountService.getAccount(accountId);
+	}
+
+	@GetMapping("/account-balance")
+	public AccountBalanceDto getAccountBalance(@RequestParam(name = "accountId") String accountId) {
+		logger.debug("getAccountBalance: {}", accountId);
+		return banckingAccountService.getAccountBalance(accountId);
+	}
+
 	@GetMapping("/account-transactions")
 	public AccountTransactionDto getAccountTransactions(@RequestParam(name = "accountId") String accountId,
 			@RequestParam(name = "fromDate") String fromDate, @RequestParam(name = "toDate") String toDate) {
 		logger.debug("getAccountTransactions: {}, fromDate: {}, toDate {}", accountId, fromDate, toDate);
 		return banckingAccountService.getAccountTransactions(accountId, fromDate, toDate);
 	}
-    
+
 	@PostMapping("/money-transfer")
-	public MoneyTransferResponseDto createMoneyTransfer(@RequestParam(name = "accountId") String accountId, @RequestBody MoneyTransferDto moneyTransferDto) {
+	public MoneyTransferResponseDto createMoneyTransfer(@RequestParam(name = "accountId") String accountId,
+			@RequestBody MoneyTransferDto moneyTransferDto) {
 		logger.debug("createMoneyTransfer for accountId: {}", accountId);
 		return banckingAccountService.createMoneyTransfer(accountId, moneyTransferDto);
 	}

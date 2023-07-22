@@ -19,6 +19,10 @@ import com.fabrick.colmi.davidemaria.dto.ApiBodyResponse;
 import com.fabrick.colmi.davidemaria.dto.transaction.AccountTransactionDto;
 import com.fabrick.colmi.davidemaria.dto.transaction.TransactionDto;
 
+
+/**
+ * Unit test example for the BanckingAccountService class
+ */
 @ExtendWith(MockitoExtension.class)
 class BanckingAccountServiceTest {
 	

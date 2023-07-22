@@ -4,6 +4,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+
+/** 
+ * Class that customizes the Http Status Code according to the exception
+ */
 @ControllerAdvice
 public class RestExceptionHandler {
 	

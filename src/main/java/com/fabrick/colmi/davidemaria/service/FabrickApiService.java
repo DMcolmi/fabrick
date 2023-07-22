@@ -13,7 +13,12 @@ import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferDto;
 import com.fabrick.colmi.davidemaria.dto.moneytransfer.MoneyTransferResponseDto;
 import com.fabrick.colmi.davidemaria.dto.transaction.AccountTransactionDto;
 import com.fabrick.colmi.davidemaria.exceptionhandling.FabrickRestException;
+import static com.fabrick.colmi.davidemaria.commons.Constants.*;
 
+
+/**
+ * Implementation of the interface that defines the methods that consume the APIs exposed by Fabrick
+ */
 @Service
 public class FabrickApiService implements FabrickApi {
 
@@ -26,7 +31,7 @@ public class FabrickApiService implements FabrickApi {
 	
 	@Override
 	public ApiBodyResponse<AccountDetailDto> getAccount(String accountId) {
-		return webClient.get().uri("/api/gbs/banking/v4.0/accounts/{accountId}", accountId)
+		return webClient.get().uri(GET_ACCOUNT, accountId)
 				// .bodyValue(filter)
 				.retrieve().bodyToMono(new ParameterizedTypeReference<ApiBodyResponse<AccountDetailDto>>() {
 				}).onErrorMap(e -> {
@@ -37,7 +42,7 @@ public class FabrickApiService implements FabrickApi {
 	
 	@Override
 	public ApiBodyResponse<AccountBalanceDto> getAccountBalance(String accountId) {
-		return webClient.get().uri("/api/gbs/banking/v4.0/accounts/{accountId}/balance", accountId).retrieve()
+		return webClient.get().uri(ACCOUNT_BALANCE, accountId).retrieve()
 				.bodyToMono(new ParameterizedTypeReference<ApiBodyResponse<AccountBalanceDto>>() {
 				}).onErrorMap(e -> {
 					logger.error("Error FabrickApiService.getAccountBalance: ", e);
@@ -50,7 +55,7 @@ public class FabrickApiService implements FabrickApi {
 	public ApiBodyResponse<AccountTransactionDto> getAccountTransactions(String accountId, String fromDate,
 			String toDate) {
 		return webClient.get()
-				.uri(uriBuilder -> uriBuilder.path("/api/gbs/banking/v4.0/accounts/{accountId}/transactions")
+				.uri(uriBuilder -> uriBuilder.path(ACCOUNT_TRANSACTIONS)
 						.queryParam("fromAccountingDate", fromDate).queryParam("toAccountingDate", toDate)
 						.build(accountId))
 				.retrieve().bodyToMono(new ParameterizedTypeReference<ApiBodyResponse<AccountTransactionDto>>() {
@@ -62,7 +67,7 @@ public class FabrickApiService implements FabrickApi {
 	
 	@Override	
 	public ApiBodyResponse<MoneyTransferResponseDto> createMoneyTransfer(String accountId, MoneyTransferDto moneyTransferDto) {
-		return webClient.post().uri("/api/gbs/banking/v4.0/accounts/{accountId}/payments/money-transfers", accountId)
+		return webClient.post().uri(MONEY_TRANSFER , accountId)
 				.bodyValue(moneyTransferDto)
 				.retrieve().bodyToMono(new ParameterizedTypeReference<ApiBodyResponse<MoneyTransferResponseDto>>() {
 				}).onErrorMap(e -> {
