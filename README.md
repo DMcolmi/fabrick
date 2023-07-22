@@ -4,19 +4,41 @@ Controller REST:
 1)	"/api/bancking-account/"
 	-	Query Params: accountId
 	-	Restituisce: dettagli account
+		{
+		    "accountId": "14537780",
+		    "iban": "IT40L0326822311052923800661",
+		    "abiCode": "03268",
+		    "cabCode": "22311",
+		    "countryCode": "IT",
+		    "internationalCin": "40",
+		    "nationalCin": "L",
+		    "account": "52923800661",
+		    "alias": "Test api",
+		    "productName": "Conto Websella",
+		    "holderName": "LUCA TERRIBILE",
+		    "activatedDate": "2016-12-14",
+		    "currency": "EUR"
+		}
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/?accountId=14537780
 
 2)	"/api/bancking-account/account-balance"
 	-	Query Params: accountId
-	-	Restituisce dettagli account balance
+	-	Restituisce: Lettura saldo account
+		{
+		    "date": "2023-07-22T00:00:00.000+00:00",
+		    "balance": 999995.12,
+		    "availableBalance": 999987.94,
+		    "currency": "EUR"
+		}
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-balance?accountId=14537780
 
 3)	"/api/bancking-account/account-transactions"
 	-	Query Params: accountId, fromDate, toDate
-	-	Restituisce dettagli account transactions
+	-	Restituisce: Lista di transazioni account
 	-	esempio chiamata: http://localhost:8080/api/bancking-account/account-transactions?accountId=14537780&fromDate=2019-01-01&toDate=2019-12-01
 	
-comunicazione con API esposte da Fabrick:
+
+Comunicazione con API esposte da Fabrick:
 1) configurazione WebClient gestita dalla classe FabrickWebClientConfig
 2) API consumate nella classe FabrickApiService
 
