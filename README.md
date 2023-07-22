@@ -1,5 +1,5 @@
 Controller REST:
--BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
+- BanckingAccountController espone le seguenti API. base URL: /api/bancking-account
 
 1)	"/api/bancking-account/"
 	-	Query Params: accountId
