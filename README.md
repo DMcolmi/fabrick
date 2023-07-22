@@ -18,7 +18,7 @@
 
 
 #### Testing:
-1) i test unitari sono realizzati con tramite mockito
+1) i test unitari sono realizzati con l'ausiglio di mockito
 2) un esempio di test unitari è stato realizzato per dei metodi del @Service BanckingAccountService
 
    
