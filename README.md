@@ -1,5 +1,5 @@
-# Fabrick
-### Assignment notes by Davide Maria Colmi
+# Backend Java Spring Boot demo Project
+### Backend demo project developed in Java using Spring Framework. APIs are exposed via a Rest Controller, test APIs exposed by Fabrick spa are consumed using a WabClient.
 
 
 #### Gestione eccezioni:
